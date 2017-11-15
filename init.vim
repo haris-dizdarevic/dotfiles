@@ -77,9 +77,9 @@ set noswapfile
 set nobackup
 set nowb
 
-" Display tabs and trailing spaces visually
-set list listchars=tab:▸\ , eol:¬
-
+" Display tabs and end of line spaces visually
+set list
+set listchars=tab:▸\ ,eol:¬
 
 "" Whitespace
 set nowrap                        " don't wrap lines
