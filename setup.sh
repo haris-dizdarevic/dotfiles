@@ -42,6 +42,4 @@ create_link gitconfig
 create_link gitignore
 create_link tmux.conf
 
-nvim
-
 exit 0
