@@ -1,0 +1,34 @@
+[user]
+  name = Haris Dizdarevic
+  email = haris.dizdarevic1@gmail.com
+[color]
+  ui = auto
+[pack]
+  threads = 0
+[alias]
+  st = status
+  co = checkout
+  br = branch
+  ap = add -p
+  dw = diff --word-diff
+  dc = diff --cached
+  rh = reset --hard
+  cf = clean -df
+  cp = cherry-pick
+  fap = fetch --all -p
+[core]
+  editor = vim
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  autocrlf = input
+  excludesfile = ~/.gitignore
+[branch]
+  autosetuprebase = always
+[push]
+  default = tracking
+[diff]
+  tool = vimdiff
+[merge]
+  tool = vimdiff
+  ff = true
+[commit]
+  gpgsign = true
