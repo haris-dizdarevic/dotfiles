@@ -78,7 +78,7 @@ set nobackup
 set nowb
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:▸\ ,trail:*, eol:¬
+set list listchars=tab:▸\ , eol:¬
 
 
 "" Whitespace
@@ -124,11 +124,6 @@ nnoremap <silent> ,d g]
 " use ,F to jump to tag in a vertical split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
 
-
-" source the vimrc file after saving it
-if has("autocmd")
-autocmd! bufwritepost vimrc source $MYVIMRC
-endif
 
 " map ,v to open ~/.vim/vimrc in new tab
 nmap <leader>v :tabedit $HOME/.config/nvim/init.vim<CR>
