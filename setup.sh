@@ -30,7 +30,7 @@ function create_link {
     echo "Link: $element"
     if [ $element == "init.vim" ]
     then
-      ls -s "$HOME/.dotfiles/$element" "$HOME/.config/nvim/init.vim"
+      ln -s "$HOME/.dotfiles/$element" "$HOME/.config/nvim/init.vim"
     else
       ln -s "$HOME/.dotfiles/$element" "$HOME/.$element"
     fi
