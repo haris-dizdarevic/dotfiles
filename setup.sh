@@ -12,14 +12,14 @@ then
   exit 2
 fi
 
+git clone --recurse https://github.com/haris-dizdarevic/dotfiles "$HOME/.dotfiles"
+
 # install all dependencies for vim plugins
 brew install neovim
 brew install the_silver_searcher
 brew install python3
 curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-git clone --recurse https://github.com/haris-dizdarevic/dotfiles "$HOME/.dotfiles"
 
 function create_link {
   element=$1
