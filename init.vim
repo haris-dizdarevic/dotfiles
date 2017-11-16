@@ -230,9 +230,10 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|vendor\|node_modules\|tmp$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:50'
 
-let g:deoplete#enable_at_startup = 1
 let g:neosnippet#enable_completed_snippet = 1
+
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:monster#completion#rcodetools#backend = "async_rct_complete"
 let g:monster#completion#rcodetools#backend = "async_rct_complete"
