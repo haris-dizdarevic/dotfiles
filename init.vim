@@ -27,7 +27,6 @@ Plug 'magarcia/vim-angular2-snippets'
 Plug 'isRuslan/vim-es6'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Quramy/tsuquyomi'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'alvan/vim-closetag'
@@ -40,14 +39,7 @@ Plug 'carakan/new-railscasts-theme'
 Plug 'sheerun/vim-polyglot'
 Plug 'mxw/vim-jsx'
 Plug 'szw/vim-tags'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neco-syntax'
-Plug 'wokalski/autocomplete-flow'
 Plug 'tpope/vim-rails'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'osyo-manga/vim-monster'
 Plug 'ngmy/vim-rubocop'
 Plug 'rakr/vim-one'
 call plug#end()
@@ -209,17 +201,7 @@ nnoremap ,gcf :exec "Ag " . expand("%:t:r")<CR>
 " Select code completion with Enter instead of Ctrl + y
 inoremap <expr> <silent> <cr> pumvisible() ? "<c-y>" : "<cr>"
 
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
-" omnifuncs
-set omnifunc=syntaxcomplete#Complete
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
+"
 " Remove scrollbar
 set guioptions=egm
 
@@ -240,10 +222,6 @@ let g:monster#completion#rcodetools#backend = "async_rct_complete"
 let g:deoplete#sources#omni#input_patterns = {
 \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
 \}
-
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " remove trailing whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
