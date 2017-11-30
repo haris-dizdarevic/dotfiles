@@ -1,6 +1,5 @@
 call plug#begin('~/.config/neovim/plugged')
 Plug 'kien/ctrlp.vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
@@ -16,35 +15,18 @@ Plug 'shime/vim-livedown'
 Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/Townk/vim-autoclose'
-Plug 'https://github.com/nikvdp/ejs-syntax'
 Plug 'slashmili/alchemist.vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'kchmck/vim-coffee-script'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim'
-Plug 'magarcia/vim-angular2-snippets'
-Plug 'isRuslan/vim-es6'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
-Plug 'Quramy/tsuquyomi'
-Plug 'Quramy/vim-js-pretty-template'
 Plug 'alvan/vim-closetag'
 Plug 'gregsexton/MatchTag'
 Plug 'craigemery/vim-autotag'
 Plug 'rking/ag.vim'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'chr4/jellygrass.vim'
-Plug 'carakan/new-railscasts-theme'
-Plug 'sheerun/vim-polyglot'
-Plug 'mxw/vim-jsx'
 Plug 'szw/vim-tags'
 Plug 'tpope/vim-rails'
-Plug 'ngmy/vim-rubocop'
-Plug 'rakr/vim-one'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
-
-highlight ColorColumn ctermbg=white
 
 set number
 set ruler
@@ -52,7 +34,7 @@ set showmatch
 set showmode
 set colorcolumn=80
 set cursorline
-set mouse=a
+set mouse=
 set magic
 set autoread
 set ai
@@ -86,14 +68,13 @@ set incsearch
 set ignorecase
 set smartcase
 
-set noautoindent
-
 " Colorscheme
 
 set termguicolors
-colorscheme one
 set background=dark
-set termguicolors
+let g:gruvbox_invert_selection='0'
+colorscheme gruvbox
+set noshowmode
 
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '`':'`'}
 let g:alchemist_tag_disable = 1
@@ -135,17 +116,12 @@ cnoremap <C-n> <Down>
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-
+set ttyfast                           " indicates a fast terminal connection
+set lazyredraw                        " see if this fixes the slowness
 
 " more natural splits
 set splitbelow
 set splitright
-
-let g:airline_powerline_fonts = 1
-let g:airline_theme='onedark'
-let g:Powerline_symbols = 'fancy'
-"let g:airline#extensions#tabline#enabled = 1
-set laststatus=2
 
 " Syntax checker ale
 let g:ale_javascript_eslint_use_global = 1
@@ -154,12 +130,7 @@ let g:ale_ruby_mri_use_global = 1
 let g:ale_sign_error = 'x'
 let g:ale_sign_warning = '⚠'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop', 'mri', 'reek'] }
-
-" vim jsx
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-
-autocmd FileType javascript JsPreTmpl html
+let g:ale_linters = { 'ruby': ['rubocop', 'mri', 'reek'] }
 
 
 " ==================== Improved search ======================
@@ -213,15 +184,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:50'
-
-let g:neosnippet#enable_completed_snippet = 1
-
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:monster#completion#rcodetools#backend = "async_rct_complete"
-let g:monster#completion#rcodetools#backend = "async_rct_complete"
-let g:deoplete#sources#omni#input_patterns = {
-\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-\}
 
 " remove trailing whitespaces on save
 autocmd BufWritePre * :%s/\s\+$//e
